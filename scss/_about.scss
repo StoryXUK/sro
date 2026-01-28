@@ -1,0 +1,138 @@
+/* --------------------------------------------
+    About
+ ---------------------------------------------- */
+.about-personal-info {
+  background-color: $dark-2;
+  padding: 60px 125px;
+  border-radius: 15px;
+  @include breakpoint(max-xl) {
+    padding: 60px;
+  }
+  @include breakpoint(max-lg) {
+    img {
+      display: none;
+    }
+  }
+  @include breakpoint(max-md) {
+    img {
+      display: block;
+    }
+  }
+  @include breakpoint(max-sm) {
+    padding: 60px 20px;
+  }
+  .personal-info-list {
+    ul {
+      margin-top: 40px;
+      @include flex(start, center);
+      gap: 20px;
+      flex-direction: column;
+      font-size: 18px;
+      @include breakpoint(max-sm) {
+        font-size: 16px;
+        gap: 10px;
+      }
+    }
+    span {
+      color: $gray;
+      width: 150px;
+      display: inline-block;
+      position: relative;
+      margin-right: 30px;
+      font-size: 16px;
+      @include breakpoint(max-sm) {
+        margin-right: 10px;
+        width: 100px;
+      }
+      &::after {
+        content: ":";
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
+
+.experience-item {
+  border-bottom: 1px solid rgbaGenerate($white, 0.1);
+  padding: 35px 0;
+  p {
+    margin: 0;
+  }
+  &:first-child {
+    border-top: 1px solid rgbaGenerate($white, 0.1);
+  }
+  .flex-end {
+    p {
+      text-align: right;
+    }
+  }
+}
+
+.skill-items {
+  @include flex(center, space-between);
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 58px;
+  @include breakpoint(max-lg) {
+    justify-content: center;
+  }
+  .skill-item-icon-counter {
+    padding: 60px 48px;
+    border: 1px solid rgbaGenerate($white, 0.05);
+    border-radius: 0 45px 0 45px;
+    @include breakpoint(max-sm) {
+      padding: 30px 38px;
+    }
+    .skill-item-icon-bg {
+      width: 100px;
+      height: 100px;
+      @include flex();
+      border-radius: 50%;
+      background-color: $white;
+      img {
+        width: 42px;
+      }
+      @include breakpoint(max-sm) {
+        width: 70px;
+        height: 70px;
+        img {
+          width: 30px;
+        }
+      }
+    }
+    h6 {
+      font-size: 40px;
+      line-height: 50px;
+      text-align: center;
+      font-weight: 700;
+      margin-top: 35px;
+      @include breakpoint(max-md) {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+  }
+  p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 35px;
+    @include breakpoint(max-md) {
+      margin-top: 15px;
+    }
+  }
+}
+
+// About page
+.about-page-banner {
+  padding-top: 220px;
+}
+.about-page-content {
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: $white;
+  padding: 30px;
+  img {
+    border-radius: 20px;
+  }
+}

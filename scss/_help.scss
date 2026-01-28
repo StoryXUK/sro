@@ -1,0 +1,138 @@
+/* --------------------------------------------
+    Helper
+ ---------------------------------------------- */
+.pt-120 {
+  padding-top: 120px;
+}
+.pb-120 {
+  padding-bottom: 120px;
+}
+br {
+  @include breakpoint(max-lg) {
+    display: none;
+  }
+}
+
+%sub-title {
+  font-size: 18px;
+  line-height: 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $theme-1;
+  @include breakpoint(max-md) {
+    font-size: 16px;
+  }
+}
+
+.sub-title {
+  @extend %sub-title;
+  display: inline-block;
+  &::before {
+    content: url("../image/section-title-star.png");
+    display: block;
+    background-size: cover;
+  }
+  &.d-flex {
+    &::before {
+      margin-bottom: -10px;
+    }
+  }
+}
+.section-title-wrapper {
+  display: flex;
+  gap: 15px;
+  p {
+    color: $gray;
+    font-size: 16px;
+  }
+}
+.section-title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 70px;
+  @include breakpoint(max-xl) {
+    font-size: 55px;
+  }
+  @include breakpoint(max-lg) {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  @include breakpoint(max-md) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  @include breakpoint(max-sm) {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+
+form {
+  input,
+  textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: transparent;
+    border: 1px solid rgbaGenerate($white, 10%);
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 25px;
+    color: inherit;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    color: inherit;
+  }
+  textarea {
+    height: 170px;
+  }
+}
+
+.js-marquee {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.section_marquee_1 {
+  @include flex(center, center);
+  @include breakpoint(max-md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  h2,
+  h2 span {
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 60px;
+    text-align: center;
+    @include breakpoint(max-md) {
+      font-size: 40px;
+    }
+  }
+
+  h2 span {
+    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-fill-color: #ffffff00;
+  }
+}
+// layout2
+.section_marquee_2 {
+  @include flex(center, center);
+  background-color: $theme-1;
+  .js-marquee {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  h2,
+  h2 span {
+    color: $dark;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+  }
+}

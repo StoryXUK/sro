@@ -1,0 +1,92 @@
+/* --------------------------------------------
+  Testimonial
+ ---------------------------------------------- */
+.testimonial-wrapper {
+  .testimonial-item {
+    background-color: $dark-2;
+    padding: 35px;
+    border-radius: 10px;
+    .testimonial-top {
+      margin-bottom: 40px;
+      i {
+        font-size: 60px;
+        color: $theme-1;
+        margin-bottom: 30px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .testimonial-bottom {
+      @include flex(center, space-between);
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+        h6 {
+          font-size: 24px;
+          line-height: 34px;
+          margin-bottom: 5px;
+        }
+        p {
+          color: $gray;
+        }
+      }
+    }
+    .testimonial-rating {
+      background: $white;
+      padding: 5px;
+      border-radius: 4px;
+      box-shadow: $shadow-white;
+      i {
+        font-size: 18px;
+      }
+      @include breakpoint(max-xl) {
+        display: none;
+      }
+    }
+  }
+  .testimonial-pagination {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    span.swiper-pagination-bullet {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+      border: 1px solid $white;
+      background: transparent;
+      position: relative;
+      @include breakpoint(max-sm) {
+        width: 20px;
+        height: 20px;
+      }
+      &::after {
+        content: "";
+        height: 10px;
+        width: 10px;
+        display: block;
+        border-radius: 50%;
+        background: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include breakpoint(max-sm) {
+          height: 7px;
+          width: 7px;
+        }
+      }
+    }
+    span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+      border-color: $theme-1;
+      &::after {
+        background-color: $theme-1;
+      }
+    }
+  }
+}

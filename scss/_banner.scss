@@ -1,0 +1,123 @@
+/* --------------------------------------------
+    Banner
+ ---------------------------------------------- */
+.banner {
+  padding-top: 207px;
+  padding-bottom: 150px;
+  position: relative;
+  background-image: url("../image/background/hero.png");
+  .banner-btns {
+    display: flex;
+    gap: 20px;
+    @include breakpoint(max-xxsmall) {
+      display: block;
+      a {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  h1 {
+    font-size: 145px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    @include breakpoint(max-xxl) {
+      font-size: 115px;
+    }
+    @include breakpoint(max-xl) {
+      font-size: 100px;
+    }
+    @include breakpoint(max-xxsmall) {
+      font-size: 70px;
+    }
+  }
+  p {
+    margin-bottom: 50px;
+    font-size: 20px;
+  }
+  &-right {
+    right: 0;
+    margin-right: -42rem;
+    margin-left: 0px !important;
+    left: unset !important;
+    @include breakpoint(max-xxxl) {
+      margin-left: 0px !important;
+      margin-right: -44.5rem;
+    }
+  }
+  &-left,
+  &-right {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    margin-left: 90px;
+    left: 0;
+    @include breakpoint(max-lg) {
+      display: none;
+    }
+    @include breakpoint(max-xxxl) {
+      margin-left: 30px;
+    }
+    a {
+      &:hover {
+        p,
+        & {
+          color: $theme-1;
+        }
+      }
+    }
+    &-content {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      margin: 0;
+    }
+    .phn {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      text-transform: uppercase;
+      &.scroll {
+        margin-left: 90px;
+        color: #999999;
+        gap: 100px;
+        p {
+          font-size: 17px;
+          letter-spacing: 1px;
+        }
+        img {
+          transform: rotate(-90deg);
+        }
+      }
+      i {
+        transform: rotate(-90deg);
+        display: block;
+        color: $white;
+        font-size: 24px;
+      }
+    }
+    .icons {
+      gap: 15px;
+      margin-left: 120px;
+      a {
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        background-color: $black;
+        color: $white;
+        @include flex(center, center);
+        transition: all 0.3s ease;
+        i {
+          font-size: 16px;
+        }
+        &:hover {
+          background-color: $theme-1;
+          i {
+            color: $dark;
+          }
+        }
+      }
+    }
+  }
+}

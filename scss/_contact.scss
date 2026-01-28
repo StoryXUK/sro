@@ -1,0 +1,99 @@
+/* --------------------------------------------
+  Contact
+ ---------------------------------------------- */
+
+@include breakpoint(max-md) {
+  .contact-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.contact-page-info {
+  margin-top: 120px;
+  .info-item {
+    border: 1px solid rgbaGenerate($white, 0.12);
+    background-color: $dark-2;
+    border-radius: 10px;
+    padding: 30px;
+    h6 {
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 10px;
+      color: $gray;
+      font-size: 400;
+    }
+    p {
+      font-size: 18px;
+      line-height: normal;
+    }
+    .contact-page-icon-container {
+      font-size: 15px;
+      display: flex;
+      gap: 15px;
+      a {
+        &:hover {
+          color: $theme-1;
+        }
+      }
+    }
+  }
+}
+
+.contact-page-title {
+  font-size: 230px;
+  line-height: 230px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  -webkit-text-stroke: 1px $white;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  @include breakpoint(max-lg) {
+    font-size: 200px;
+    line-height: 200px;
+  }
+  @include breakpoint(max-md) {
+    font-size: 150px;
+    line-height: 150px;
+  }
+  @include breakpoint(max-xs) {
+    font-size: 120px;
+    line-height: 120px;
+  }
+  @include breakpoint(max-xxsmall) {
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+.contact-form {
+  text-align: center;
+  padding: 60px;
+  background-color: $dark;
+  border-radius: 10px;
+  border: 1px solid rgbaGenerate($white, 0.12);
+  margin-top: 120px;
+  @include breakpoint(max-xs) {
+    padding: 30px;
+  }
+  h4 {
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 60px;
+    @include breakpoint(max-md) {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 30px;
+    }
+    @include breakpoint(max-sm) {
+      font-size: 26px;
+      line-height: 36px;
+    }
+  }
+  input,
+  textarea {
+    background-color: $dark-2;
+    border: none;
+  }
+  textarea {
+    height: 170px;
+  }
+}

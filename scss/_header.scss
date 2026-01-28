@@ -1,0 +1,400 @@
+/* --------------------------------------------
+    Header Style
+ ---------------------------------------------- */
+.nav-logo {
+  width: 130px;
+}
+.header-2 {
+  background: $dark-2;
+  padding: 0;
+  border-bottom: 1px solid rgbaGenerate($white, 0.12);
+  .nav-logo {
+    padding: 30px 35px 30px 70px;
+    border-right: 1px solid rgbaGenerate($white, 0.12);
+    width: unset;
+    @include breakpoint(max-xxl) {
+      padding: 30px 15px 30px 30px;
+    }
+    @media (max-width: 1250px) {
+      padding: 30px 15px 30px 0px;
+    }
+    @include breakpoint(max-xl) {
+      padding: 30px 35px 30px 70px;
+    }
+    @include breakpoint(max-sm) {
+      border: none;
+      padding: 30px 15px 30px 0px;
+    }
+  }
+  .header_btn_container {
+    border-left: 1px solid rgbaGenerate($white, 0.12);
+    padding: 20px 70px 20px 35px;
+    @include breakpoint(max-xxl) {
+      padding: 20px 30px 20px 15px;
+    }
+    @media (max-width: 1250px) {
+      padding: 20px 0px 20px 15px;
+    }
+    @include breakpoint(max-xl) {
+      padding: 20px 70px 20px 35px;
+    }
+    @include breakpoint(max-sm) {
+      border: none;
+      padding: 20px 0px 20px 15px;
+    }
+  }
+  &.sticky {
+    padding: 0;
+  }
+}
+header {
+  padding: 20px 70px;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  @include breakpoint(max-xxxl) {
+    padding: 20px 50px;
+  }
+  @include breakpoint(max-lg) {
+    padding: 20px 20px;
+  }
+  nav {
+    ul {
+      a {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 18px;
+        @include breakpoint(max-xxxl) {
+          font-size: 16px;
+        }
+        &:hover {
+          color: $theme-1;
+        }
+      }
+    }
+  }
+  @include breakpoint(max-xxl) {
+    .theme-btn {
+      display: none;
+    }
+  }
+  @include breakpoint(max-xl) {
+    .theme-btn {
+      display: block;
+    }
+  }
+  &.sticky {
+    padding: 20px 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: $white;
+    animation: slideDown 0.5s ease-in-out forwards;
+    @include breakpoint(max-xxxl) {
+      padding: 20px 50px;
+    }
+    @include breakpoint(max-lg) {
+      padding: 20px 20px;
+    }
+    .dark-bg & {
+      background-color: $dark-2;
+    }
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+.header-content {
+  @include flex(center, space-between);
+}
+.toggle-sidebar {
+  background-color: $white;
+  margin-left: 20px;
+  height: 60px;
+  width: 60px;
+  @include flex(center, center);
+  border-radius: 10px;
+  font-size: 25px;
+  color: $dark;
+}
+
+.default-header {
+  position: relative;
+  background-color: $dark-3;
+  margin-top: 0;
+  padding: 20px 0;
+}
+
+.main-menu {
+  .navbar-nav {
+    > ul {
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint(max-xxxl) {
+        gap: 10px;
+      }
+      > li {
+        position: relative;
+        display: inline-block;
+        > a {
+          display: inline-block;
+          color: $dark;
+          padding-right: 20px;
+          line-height: 100%;
+          margin: 0;
+          transition: all linear 0.3s;
+          .dark-bg & {
+            color: $white;
+            &:hover {
+              color: $theme-1;
+            }
+          }
+          &.active {
+            color: $theme-1;
+          }
+        }
+        &:last-child > a {
+          padding-right: 0;
+        }
+        .submenu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 200px;
+          z-index: 99;
+          background: $white;
+          max-height: 450px;
+          box-shadow: rgb(0 0 0 / 15%) 0px 4px 14px;
+          padding-left: 0;
+          opacity: 0;
+          z-index: 99;
+          visibility: hidden;
+          transform: translate(0%, 10%);
+          transform-origin: top;
+          transition: all linear 0.2s;
+          transition: all 0.3s 0s ease-out;
+          .dark-bg & {
+            background: $dark-3;
+          }
+          li {
+            margin-left: 0;
+            line-height: 30px;
+            position: relative;
+            a {
+              color: $dark;
+              display: block;
+              border-bottom: 1px solid $gray;
+              padding: 7px 20px;
+              transition: all linear 0.3s;
+              font-size: 14px;
+              font-weight: 500;
+              .dark-bg & {
+                color: $white;
+                border-bottom: 1px solid $dark-4;
+                &:hover {
+                  color: $dark;
+                }
+              }
+            }
+            &:last-child {
+              a {
+                border: none;
+              }
+            }
+            .submenu {
+              left: 100%;
+              top: 0;
+              visibility: hidden;
+              opacity: 0;
+              font-size: 16px;
+            }
+            &:hover {
+              > .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0%, 0%);
+              }
+            }
+          }
+        }
+        &:hover {
+          > .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0%, 7%);
+          }
+        }
+      }
+      > .dropdown-nav {
+        li {
+          > a {
+            &:hover {
+              background: $theme-1;
+              color: $dark;
+              border-color: $gray-2;
+            }
+          }
+          a.active {
+            background: $theme-1;
+            color: $dark;
+            border-color: $gray-2;
+          }
+        }
+      }
+      > li.dropdown-nav {
+        > a {
+          position: relative;
+        }
+      }
+    }
+    ul {
+      li.dropdown-nav {
+        > a {
+          &::after {
+            content: "\f0d7";
+            font-family: "Font Awesome 5 pro" !important;
+            transform: translateY(2px);
+            position: absolute;
+            font-weight: 700;
+            margin-left: 5px;
+            right: 0px;
+            width: 15px;
+            margin-top: -3px;
+            transition: all 0.3s ease-out 0s;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .submenu {
+      li.dropdown-nav {
+        > a {
+          &::after {
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  padding-right: 30px;
+  max-width: 100%;
+  height: 100%;
+  visibility: hidden;
+  z-index: 999999;
+  padding: 0px 30px 50px;
+  .nav-logo {
+    position: relative;
+    padding: 25px 0px 20px;
+    a {
+      display: block;
+    }
+    img {
+      max-width: 200px;
+    }
+  }
+  .close-btn {
+  }
+  .menu-backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .main-menu-mobile {
+    padding: 0px 30px 50px;
+    position: absolute;
+    left: -400px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: $white;
+    z-index: 5;
+    border-radius: 0px;
+    transition: all 900ms ease;
+    #mobile-nav {
+      margin-top: 30px;
+    }
+    ul.submenu {
+      display: none;
+    }
+    li {
+      position: relative;
+      display: block;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      a {
+        position: relative;
+        display: block;
+        font-weight: 500;
+        padding: 12px 0px;
+        color: $dark;
+      }
+      .dropdown-toggle-btn {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        left: 0px;
+        height: 44px;
+        text-align: right;
+        font-size: 14px;
+        line-height: 44px;
+        cursor: pointer;
+        z-index: 5;
+        color: $dark;
+      }
+    }
+  }
+  &.visible {
+    visibility: visible;
+    .main-menu-mobile {
+      left: 0px;
+    }
+    .menu-backdrop {
+      opacity: 1;
+      width: 100%;
+      visibility: visible;
+      transition: all 500ms ease;
+      transform: translateX(0%);
+    }
+  }
+  &.mobile-menu-2 {
+    .close-btn {
+      color: $white;
+    }
+    .main-menu-mobile {
+      background-color: #0f0f13;
+      li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        a,
+        .dropdown-toggle-btn {
+          color: $white;
+        }
+      }
+    }
+  }
+}

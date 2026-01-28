@@ -1,0 +1,44 @@
+/* --------------------------------------------
+  Breadcrumbs
+ ---------------------------------------------- */
+.breadcrumbs {
+  padding-top: 207px;
+  padding-bottom: 150px;
+  h1 {
+    font-size: 60px;
+    line-height: 70px;
+    @include breakpoint(max-lg) {
+      font-size: 40px;
+      line-height: 50px;
+    }
+    @include breakpoint(max-md) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+  }
+  &-content {
+    margin-top: 30px;
+    margin-left: 100px;
+    @include breakpoint(max-md) {
+      margin-left: 50px;
+      margin-top: 20px;
+    }
+    @include breakpoint(max-sm) {
+      margin-left: 10px;
+      margin-top: 0px;
+    }
+    p {
+      margin-top: 40px;
+      color: $gray;
+      line-height: 26px;
+      margin-left: 20px;
+
+      @include breakpoint(max-md) {
+        margin-top: 20px;
+      }
+      @include breakpoint(max-sm) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

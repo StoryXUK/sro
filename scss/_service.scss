@@ -1,0 +1,133 @@
+/* --------------------------------------------
+  Service
+ ---------------------------------------------- */
+.service-items {
+  margin-left: 30px;
+  @include breakpoint(max-md) {
+    margin-left: 0;
+  }
+  .service-item {
+    border-bottom: 1px solid rgbaGenerate($white, 0.1);
+    padding: 28px 0;
+    @include flex(center, space-between);
+    cursor: pointer;
+    @include breakpoint(max-xl) {
+      padding: 15px 0;
+    }
+    &:hover,
+    &.active {
+      color: $theme-1;
+      i {
+        background-color: $theme-1;
+      }
+    }
+    &:first-child {
+      border-top: 1px solid rgbaGenerate($white, 0.1);
+    }
+    h5 {
+      font-size: 41px;
+      line-height: 50px;
+      @include breakpoint(max-xl) {
+        font-size: 30px;
+        line-height: 38px;
+      }
+      @include breakpoint(max-xxs) {
+        font-size: 24px;
+        line-height: 34service-item-imgpx;
+      }
+    }
+    i {
+      height: 60px;
+      width: 60px;
+      background-color: $white;
+      @include flex;
+      border-radius: 50%;
+      color: $dark;
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+}
+.service-item-img {
+  height: 100%;
+  overflow: hidden;
+  &.active {
+    img {
+      transform: scale(1);
+      transition: 1s all;
+    }
+  }
+  img {
+    transform: scale(1.5);
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.service-page-items {
+  @include flex(center, space-between);
+  flex-wrap: wrap;
+  .service-page-item {
+    width: 33.33%;
+    padding: 0 45px;
+    border-left: 1px solid rgbaGenerate($white, 0.12);
+    @include breakpoint(max-xl) {
+      width: 50%;
+      &:nth-child(1),
+      &:nth-child(2) {
+        padding-bottom: 60px;
+        border-bottom: 1px solid rgbaGenerate($white, 0.12);
+      }
+      &:nth-child(3),
+      &:nth-child(4) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        border-bottom: 1px solid rgbaGenerate($white, 0.12);
+      }
+    }
+    @include breakpoint(max-md) {
+      width: 100%;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      &:not(:last-child) {
+        border-bottom: 1px solid rgbaGenerate($white, 0.12);
+      }
+    }
+    &:nth-child(-n + 3) {
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgbaGenerate($white, 0.12);
+    }
+    &:nth-child(n + 4):nth-child(-n + 6) {
+      padding-top: 60px;
+    }
+    h2 {
+      font-size: 90px;
+      line-height: 90px;
+      font-weight: bolder;
+      margin-bottom: 35px;
+    }
+    h4 {
+      font-size: 30px;
+      line-height: 34px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      @include breakpoint(max-lg) {
+        font-size: 25px;
+      }
+      @include breakpoint(max-sm) {
+        font-size: 20px;
+      }
+    }
+    p {
+      color: $gray;
+      margin-bottom: 40px;
+    }
+    a {
+      font-weight: bold;
+      @include flex(center, start);
+      gap: 10px;
+      &:hover {
+        color: $theme-1;
+      }
+    }
+  }
+}

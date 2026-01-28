@@ -1,0 +1,206 @@
+/* --------------------------------------------
+    Button
+ ---------------------------------------------- */
+
+%btn {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 40px;
+  border-radius: 15px;
+  @include transition;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  color: inherit;
+  @include breakpoint(max-md) {
+    padding: 15px 30px;
+  }
+}
+
+.theme-btn {
+  @extend %btn;
+  border: 1px solid rgbaGenerate($black, 20%);
+  .dark-bg & {
+    border: 1px solid $dark;
+    color: $dark;
+    &:hover {
+      color: $dark;
+    }
+  }
+  &:not(.btn_moveing_hover):hover {
+    background-color: $theme-1;
+    border: 1px solid rgbaGenerate($theme-1, 20%);
+  }
+}
+.theme-btn-with-bg {
+  @extend %btn;
+  border: 1px solid $theme-1;
+  background-color: $theme-1;
+  color: $black;
+  &:not(.btn_moveing_hover):hover {
+    background-color: transparent;
+    color: $dark;
+  }
+  &.dark-2-bg {
+    background-color: $dark-2;
+    color: $dark;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.btn-underline {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $dark;
+    transition: transform 0.25s ease-out;
+    transform-origin: bottom left;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.btn_moveing_hover {
+  position: relative;
+  transition: all 0.2s ease;
+  overflow: hidden;
+
+  &:hover {
+    span {
+      transition-delay: 0s;
+      color: $dark;
+    }
+  }
+
+  span {
+    transition: 0.5s all;
+    transition-delay: 0.25s;
+  }
+  .magnet-content {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .magnet-bubble {
+    position: absolute;
+    display: grid;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 2%;
+    transform: translate(-50%, -50%);
+    background: $theme-1;
+    border-radius: 50%;
+    opacity: 0;
+
+    &:after {
+      content: "";
+      padding-top: 100%;
+    }
+  }
+  &.theme-btn-with-bg {
+    .magnet-bubble {
+      background: $white;
+    }
+  }
+}
+
+.theme-btn-3 {
+  @extend %btn;
+  color: $white;
+  position: relative;
+  padding: 16px 40px 16px 50px;
+  span {
+    z-index: 1;
+  }
+  &::before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Pro";
+    height: 60px;
+    width: 40px;
+    background-color: $white;
+    color: $dark;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    z-index: 0;
+    border-radius: 10px;
+    transform: translate(0%, -50%);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 20px;
+    .dark-bg & {
+      background-color: $white;
+    }
+  }
+  &:hover {
+    color: $dark;
+    &::before {
+      padding-left: 25px;
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+.theme-btn_circle {
+  @extend %btn;
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  background: transparent;
+  color: $white;
+  border: 1px solid rgbaGenerate($white, 0.12);
+  padding: 0 29px;
+  .magnet-bubble {
+    background-color: $theme-1;
+  }
+  .magnet-content {
+    align-items: end;
+    i {
+      margin-bottom: 5px;
+    }
+  }
+}
+.contact_btn {
+  border: 1px solid $white;
+  color: $white;
+  width: 80%;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 30px 0;
+  border-radius: 15px;
+  transition: all 0.4s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: inherit;
+  margin-top: 40px;
+  @include breakpoint(max-md) {
+    padding: 20px 30px;
+    font-size: 18px;
+  }
+  &.btn_moveing_hover {
+    .magnet-bubble {
+      background: $white;
+    }
+  }
+}

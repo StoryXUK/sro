@@ -1,0 +1,77 @@
+/* --------------------------------------------
+  Footer
+ ---------------------------------------------- */
+
+.footer-nav {
+  @include flex(center, start);
+  gap: 35px;
+  @include breakpoint(max-lg) {
+    gap: 20px;
+  }
+  @include breakpoint(max-md) {
+    row-gap: 5px;
+    flex-wrap: wrap;
+  }
+  a {
+    font-size: 18px;
+    @include breakpoint(max-md) {
+      font-size: 16px;
+    }
+    &:hover {
+      color: $theme-1;
+    }
+  }
+}
+.footer-social {
+  display: flex;
+  gap: 10px;
+  a {
+    height: 46px;
+    width: 46px;
+    background-color: $white;
+    @include flex(center, center);
+    border-radius: 50%;
+    color: $black;
+    &:hover {
+      background-color: $theme-1;
+    }
+  }
+}
+.footer-content {
+  background: white;
+  color: $black;
+  padding: 40px 58px 35px;
+  border-radius: 35px 35px 0 0;
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  i {
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  @include breakpoint(max-lg) {
+    padding: 22px 38px;
+  }
+}
+
+.portfolio-slider-footer-wrapper {
+  padding: 45px 0 35px;
+  margin: 0 70px;
+  .portfolio-slider-footer-content {
+    @include flex(center, space-between);
+    @include breakpoint(max-xl) {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    a {
+      font-weight: bold;
+      &:hover {
+        color: $theme-1;
+      }
+      i {
+        font-weight: bold;
+        margin-left: 5px;
+      }
+    }
+  }
+}

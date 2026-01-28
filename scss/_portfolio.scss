@@ -1,0 +1,202 @@
+/* --------------------------------------------
+  Portfolio
+ ---------------------------------------------- */
+
+.portfolio2-items {
+  .portfolio2-item {
+    overflow: hidden;
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+      transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+      vertical-align: middle;
+      &:hover {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+  }
+}
+
+.portfolio2_titles {
+  visibility: hidden;
+  position: fixed;
+  z-index: 15;
+  white-space: nowrap;
+  opacity: 0;
+  p {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  p,
+  span {
+    padding: 10px 15px;
+    color: $dark;
+    background-color: $white;
+  }
+}
+.portfolio2_titles.visible {
+  opacity: 1;
+  visibility: visible !important;
+  z-index: 99999;
+}
+
+.portfolio-slider-wrapper {
+  padding: 226px 0 75px 0;
+  margin: 0 70px;
+  position: relative;
+  .swiper-slide:nth-child(even) {
+    img {
+      height: 590px;
+      object-fit: cover;
+    }
+  }
+  .swiper-slide:nth-child(odd) {
+    img {
+      height: 400px;
+      object-fit: cover;
+      @include breakpoint(max-md) {
+        height: 590px;
+      }
+    }
+  }
+  .portfolio-slider-pagination {
+    bottom: 0px;
+    top: unset;
+    background-color: rgbaGenerate($white, 0.12);
+    height: 2px;
+    span.swiper-pagination-progressbar-fill {
+      background-color: $theme-1;
+      height: 4px;
+      margin-top: -1px;
+    }
+  }
+}
+.portfolio-2-isotope-nav-container {
+  display: flex;
+}
+.portfolio-2-isotope-nav {
+  border: 1px solid rgbaGenerate($white, 0.12);
+  background-color: $dark-4;
+  border-radius: 10px;
+  padding: 20px 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  gap: 50px;
+  @include breakpoint(max-lg) {
+    gap: 30px;
+  }
+  @include breakpoint(max-md) {
+    gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+  button {
+    color: $white;
+    font-size: 18px;
+    line-height: 28px;
+    &.active,
+    &:hover {
+      color: $theme-1;
+    }
+  }
+}
+
+.portfolio-details {
+  .portfolio-details-info {
+    ul {
+      @include flex(center, start);
+      border: 1px solid rgbaGenerate($white, 0.12);
+      border-radius: 10px;
+      flex-wrap: wrap;
+
+      li {
+        border-right: 1px solid rgbaGenerate($white, 0.12);
+        padding: 55px 45px;
+        width: 20%;
+        @include breakpoint(max-xxl) {
+          padding: 35px 25px;
+        }
+        @include breakpoint(max-xl) {
+          padding: 35px 0px 35px 15px;
+        }
+        @include breakpoint(max-lg) {
+          width: 33%;
+          padding: 35px 25px;
+          &:nth-child(3) {
+            border-right: 0;
+          }
+          &:nth-child(-n + 3) {
+            border-bottom: 1px solid rgbaGenerate($white, 0.12);
+          }
+        }
+        @include breakpoint(max-lg) {
+          width: 50%;
+          &:nth-child(-n + 4) {
+            border-bottom: 1px solid rgbaGenerate($white, 0.12);
+          }
+          &:nth-child(3) {
+            border-right: 1px solid rgbaGenerate($white, 0.12);
+          }
+          &:nth-child(2),
+          &:nth-child(4) {
+            border-right: 0;
+          }
+        }
+        @include breakpoint(max-xs) {
+          width: 100%;
+          border-right: 0;
+        }
+        h6 {
+          font-size: 20px;
+          line-height: 30px;
+          margin-bottom: 5px;
+        }
+        p {
+          font-size: 18px;
+          line-height: 30px;
+          color: $gray;
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+  .portfolio-icon-container {
+    font-size: 15px;
+    display: flex;
+    gap: 15px;
+  }
+}
+
+.portfolio-details-content {
+  margin-top: 60px;
+  h4,
+  img {
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 30px;
+    @include breakpoint(max-md) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+  p {
+    color: $gray;
+    margin-bottom: 20px;
+    line-height: 26px;
+  }
+}
