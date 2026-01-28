@@ -32,7 +32,7 @@
 /* --------------------------------------------
     Common CSS
  ---------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 .m-0 {
   margin: 0px;
 }
@@ -50799,8 +50799,8 @@
 /* --------------------------------------------
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
-.font-sora {
-  font-family: "Sora", sans-serif;
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
@@ -50808,7 +50808,7 @@ html {
 }
 
 body {
-  font-family: "Sora", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 1.4;
   padding: 0;
@@ -50843,7 +50843,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Sora", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0px;
   padding: 0;
   -webkit-transition: all 0.4s ease-in-out;
